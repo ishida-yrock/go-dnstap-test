@@ -26,7 +26,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/dnstap/golang-dnstap"
+	"github.com/ishida-yrock/go-dnstap-test"
 )
 
 type stringList []string

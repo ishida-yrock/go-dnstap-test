@@ -12,4 +12,4 @@ textual format logging.
 This repository contains a command-line tool named "dnstap" developed in the
 Go programming language. It can be installed with the following command:
 
-    go get -u github.com/dnstap/golang-dnstap/dnstap
+    go get -u github.com/ishida-yrock/go-dnstap-test/dnstap
