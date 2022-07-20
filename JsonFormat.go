@@ -107,15 +107,15 @@
 		 }
 	 }
  
-	 if m.ResponseMessage != nil { //この中でjsonMarshalしちゃだめ？
+	 if m.ResponseMessage != nil { //この中でjsonMarshal?
 		 msg := new(dns.Msg)
-		 msgj := json.Marshal(msg)  //json.Marshal突っ込んでみたナリ〜
+		 //1 variable but json.Marshal return 2 valuesのエラー。多分元々response_messageと値が1:1だったのを、中身をいくつもjson化してるから起こった？配列とかに順にいれさせて吐かせられないか？
 		 err := msg.Unpack(m.ResponseMessage) // エラー処理
 		 if err != nil {
 			 jMsg.ResponseMessage = fmt.Sprintf("parse failed: %v", err)
 		 } else {
-			 jMsg.ResponseMessage = msgj.String() //こいつがresponse_messageの正体で、その中身を:と,ごとにさらにjson化したい  一個ずつopcodeとかも構造化に入れて定義する？
-		 } //構造化定義でjson:response_message,omitemptyと定義されているので、標準出力で「"response_message":"~~~~~"」と表示される。否、されてしまう。
+			 jMsg.ResponseMessage = msg.String() //こいつがresponse_messageの正体で、その中身を:と,ごとにさらにjson化したい  一個ずつopcodeとかも構造化に入れて定義する？
+		 } //構造化定義でjson:response_message,omitemptyと定義されているので、標準出力で「"response_message":"~~~~~"」とreponseに対して大量の平文を1:1に表示される
 	 }
 	 return jMsg  //jsonMessage構造のjson文字列を返す
  }
