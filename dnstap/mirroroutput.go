@@ -17,7 +17,7 @@
 package main
 
 import (
-	dnstap "github.com/dnstap/golang-dnstap"
+	dnstap "github.com/ishida-yrock/go-dnstap-test"
 )
 
 type mirrorOutput struct {

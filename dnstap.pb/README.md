@@ -4,7 +4,7 @@ This directory contains only the protobuf schemas for [dnstap](http://dnstap.inf
 a repository named "dnstap.pb".
 
 See the following repositories/links for implementations:
-- [golang-dnstap](https://github.com/dnstap/golang-dnstap): command-line tool and Golang package
+- [golang-dnstap](https://github.com/ishida-yrock/go-dnstap-test): command-line tool and Golang package
 
 # Community
 
